@@ -1,0 +1,29 @@
+{
+  "data/remove_bg/image_0_crop_resize_bg.jpg": {
+    "caption": "a man wearing glasses, looking to the side"
+  },
+  "data/remove_bg/image_1_crop_resize_bg.jpg": {
+    "caption": "the boy is sitting and playing video games, wearing glasses"
+  },
+  "data/remove_bg/image_2_crop_resize_bg.jpg": {
+    "caption": "a man is posing for a picture wearing glasses"
+  },
+  "data/remove_bg/image_3_crop_resize_bg.jpg": {
+    "caption": "there is a person that has glasses on"
+  },
+  "data/remove_bg/image_4_crop_resize_bg.jpg": {
+    "caption": "a young man in black shirt and eye glasses"
+  },
+  "data/remove_bg/image_5_crop_resize_bg.jpg": {
+    "caption": "a man standing and posing with a glove, wearing glasses"
+  },
+  "data/remove_bg/image_6_crop_resize_bg.jpg": {
+    "caption": "a man standing and looking at the camera, wearing glasses"
+  },
+  "data/remove_bg/image_7_crop_resize_bg.jpg": {
+    "caption": "a young man with glasses holding a cell phone"
+  },
+  "data/remove_bg/image_8_crop_resize_bg.jpg": {
+    "caption": "a man wearing glasses in front of a black background"
+  }
+}
