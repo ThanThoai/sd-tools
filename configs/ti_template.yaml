@@ -1,0 +1,44 @@
+dataset:
+  train_data_dir: data
+  placeholder_token: <bxthoai>
+  initializer_token: boy
+  learnable_property: object
+  repeats: 100
+  num_vectors: 1
+  no_template: False
+  center_crop: False
+
+training:
+  save_steps: 1000
+  save_as_full_pipeline: False
+  pretrained_model_name_or_path: runwayml/stable-diffusion-v1-5
+  tokenizer_name: openai/clip-vit-large-patch14
+  output_dir: exp1
+  seed: 42
+  resolution: 512
+  train_batch_size: 5
+  max_train_steps: 5000
+  gradient_accumulation_steps: 1
+  gradient_checkpointing: False
+  learning_rate: 0.0001
+  scale_lr: False
+  lr_scheduler: constant
+  lr_warmup_steps: 500
+  lr_num_cycles: 1
+  dataloader_num_workers: 0
+  adam_beta1: 0.9
+  adam_beta2: 0.999
+  adam_weight_decay: 0.01
+  adam_epsilon: 0.00000001
+  logging_dir: logs
+  mixed_precision: fp16
+  allow_tf32: False
+  report_to: tensorboard
+  checkpointing_steps: 1000
+  enable_xformers_memory_efficient_attention: True
+
+
+validate:
+  validation_prompt: <bxthoai> riding a unicorn in a corn field 
+  num_validation_images: 4
+  validation_steps: 250
