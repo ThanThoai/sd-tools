@@ -250,6 +250,7 @@ class TextualInversionDataset(Dataset):
         placeholder_token="*",
         center_crop=False,
         no_template=False,
+        use_caption=False,
     ):
         self.data_root = data_root
         self.tokenizer = tokenizer
@@ -259,6 +260,7 @@ class TextualInversionDataset(Dataset):
         self.center_crop = center_crop
         self.flip_p = flip_p
         self.no_template = no_template
+        self.use_caption = use_caption
 
         self.image_paths = [
             os.path.join(self.data_root, file_path)
@@ -290,7 +292,8 @@ class TextualInversionDataset(Dataset):
 
     def __getitem__(self, i):
         example = {}
-        image = Image.open(self.image_paths[i % self.num_images])
+        img_path = self.image_paths[i % self.num_images]
+        image = Image.open(img_path)
 
         if not image.mode == "RGB":
             image = image.convert("RGB")
@@ -298,6 +301,11 @@ class TextualInversionDataset(Dataset):
         placeholder_string = self.placeholder_token
         if self.no_template:
             text = placeholder_string
+        elif self.use_caption:
+            caption_path = os.path.join(
+                "caption", img_path.split("/")[-1].replace(".jpg", ".caption")
+            )
+            text = open(caption_path, "r").read().strip()
         else:
             text = random.choice(self.templates).format(placeholder_string)
 
@@ -502,6 +510,8 @@ def main(config_file):
         learnable_property=args.dataset.learnable_property,
         center_crop=args.dataset.center_crop,
         set="train",
+        no_template=args.dataset.no_template,
+        use_caption=args.dataset.use_caption,
     )
     train_dataloader = torch.utils.data.DataLoader(
         train_dataset,
@@ -757,5 +767,5 @@ def main(config_file):
 
 
 if __name__ == "__main__":
-    config_file = "configs/ti_template.yaml"
+    config_file = "configs/ti_caption.yaml"
     main(config_file)

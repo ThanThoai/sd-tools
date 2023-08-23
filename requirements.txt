@@ -1,5 +1,7 @@
-diffuser[torch]
+diffusers[torch]
 ftfy
 transformers
 tensorboard
 torchvision
+accelerate
+omegaconf

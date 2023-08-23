@@ -5,7 +5,7 @@ dataset:
   learnable_property: object
   repeats: 100
   num_vectors: 1
-  no_template: False
+  no_template: True
   use_caption: False
   center_crop: False
 
@@ -14,7 +14,7 @@ training:
   save_as_full_pipeline: False
   pretrained_model_name_or_path: runwayml/stable-diffusion-v1-5
   tokenizer_name: openai/clip-vit-large-patch14
-  output_dir: exp1
+  output_dir: exp4
   seed: 42
   resolution: 512
   train_batch_size: 5
