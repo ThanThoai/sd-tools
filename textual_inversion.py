@@ -303,7 +303,7 @@ class TextualInversionDataset(Dataset):
             text = placeholder_string
         elif self.use_caption:
             caption_path = os.path.join(
-                "caption", img_path.split("/")[-1].replace(".jpg", ".caption")
+                "datas/caption", img_path.split("/")[-1].replace(".jpg", ".caption")
             )
             text = open(caption_path, "r").read().strip()
         else:

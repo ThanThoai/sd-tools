@@ -1,5 +1,5 @@
 dataset:
-  train_data_dir: data_keep_bg
+  train_data_dir: datas/keep_bg
   placeholder_token: <bxthoai>
   initializer_token: boy
   learnable_property: object
