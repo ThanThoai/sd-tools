@@ -767,5 +767,9 @@ def main(config_file):
 
 
 if __name__ == "__main__":
-    config_file = "configs/ti_caption.yaml"
-    main(config_file)
+    import argparse
+
+    passer = argparse.ArgumentParser()
+    passer.add_argument("--config", help="Config to train textual inversion")
+    args = parser.parse_args()
+    main(config_file=args.config)
